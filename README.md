@@ -9,3 +9,9 @@ Run the follow commands to install all the dependencies.
 npm i
 bower i
 ```
+
+## How to run it
+
+```
+npm start
+```
