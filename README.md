@@ -9,3 +9,5 @@ Run the follow commands to install all the dependencies.
 npm i
 bower i
 ```
+
+Check branches for lessons
