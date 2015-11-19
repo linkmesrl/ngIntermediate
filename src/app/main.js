@@ -7,7 +7,7 @@ angular.module('handlingNinja', ['ngRoute'])
   function($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'views/ninja.html',
+        templateUrl: 'app/views/ninja.html',
         controller: 'ninjaCtrl'
       }).
       otherwise({
