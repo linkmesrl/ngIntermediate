@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>ngIntermediate</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Handling Ninjas</h1>
+      </div>
+    </div>
+  
     <ng-view></ng-view>
-
+  </div>
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="app/main.js"></script>
     <script src="app/controllers/ninja.controller.js"></script>
+    <script src="app/controllers/ninja_update.controller.js"></script>
 
 </body>
 </html>

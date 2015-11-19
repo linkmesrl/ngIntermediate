@@ -20,7 +20,8 @@
     "angular": "~1.4.7",
     "angular-mocks": "~1.4.7",
     "angular-route": "~1.4.7",
-    "ng-form-errors": "ngFormErrors#~1.0.1"
+    "ng-form-errors": "ngFormErrors#~1.0.1",
+    "bootstrap": "~3.3.5"
   },
   "resolutions": {
     "angular": "~1.4.7",

@@ -10,6 +10,10 @@ angular.module('handlingNinja', ['ngRoute'])
         templateUrl: 'app/views/ninja.html',
         controller: 'ninjaCtrl'
       }).
+      when('/ninja/:id', {
+        templateUrl: 'app/views/update_ninja.html',
+        controller: 'ninjaUpdateCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });
