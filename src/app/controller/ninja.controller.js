@@ -7,7 +7,6 @@ angular.module('handlingNinja')
     $scope.ninjas = Ninja.query();
   };
 
-
   Ninja.count(function(ninjaCount) {
     $scope.ninjaCount = ninjaCount;
   });
@@ -17,10 +16,7 @@ angular.module('handlingNinja')
       $scope.ninjaCount = ninjaCount;
     });
   }
-  // .then(function(ninjaCount) {
-  //   $scope.count = ninjaCount;
-  // });
-  // console.log(Ninja.count());
+
   $scope.newNinja = {name: null, age: null};
 
   $scope.createNinja = function(){
