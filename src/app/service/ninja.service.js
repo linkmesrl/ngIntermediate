@@ -1,9 +1,9 @@
 angular.module('handlingNinja')
-.service('Ninja', function($resource){
-  var Ninja = $resource('http://192.168.6.27:3001/api/ninja/:_id', {
+.factory('Ninja', function($resource){
+  var Ninjaaa = $resource('http://192.168.6.27:3001/api/ninja/:_id', {
     _id: '@_id'
   }, {
-    count: {method: 'GET', isArray: true, params: {count: true}}
+    count: {method: 'GET', url: 'http://192.168.6.27:3001/api/ninja/count'}
   });
-  return Ninja;
+  return Ninjaaa;
 });
