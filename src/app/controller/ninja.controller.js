@@ -3,18 +3,6 @@
 angular.module('handlingNinja')
 .controller('ninjaCtrl', function($scope, $location, Ninja, _) {
 
-  $scope.ninjas = [
-    {
-      _id: '001',
-      name: 'daniele',
-      age: '30'
-    },
-    {
-      _id: '002',
-      name: 'gian',
-      age: '28'
-    }
-  ];
   $scope.loadNinja = function(){
     $scope.ninjas = Ninja.query();
   };
@@ -34,8 +22,9 @@ angular.module('handlingNinja')
     ninja.$remove()
     .then(function(){
       _.remove($scope.ninjas, {_id: ninja._id});
+      $scope.loadNinja();
     });
   };
 
-  // $scope.loadNinja();
+  $scope.loadNinja();
 });
