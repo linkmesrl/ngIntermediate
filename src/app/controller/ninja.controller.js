@@ -19,7 +19,7 @@ angular.module('handlingNinja')
 
   $scope.newNinja = {name: null, age: null};
 
-  $scope.createNinja = function(){
+  $scope.createNinja = function(form) {
     var ninja = new Ninja($scope.newNinja);
     ninja.$save()
     .then(function(res){

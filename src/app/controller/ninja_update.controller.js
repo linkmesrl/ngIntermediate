@@ -9,7 +9,11 @@ angular.module('handlingNinja')
     $scope.ninja = ninja;
   });
 
-  $scope.updateNinja = function(){
+  $scope.updateNinja = function(form) {
+    console.log(form);
+    if(!form.$valid) {
+      return;
+    }
     $scope.ninja.$save()
     .then(function() {
       $location.url('/');

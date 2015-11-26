@@ -1,11 +1,17 @@
 <section>
     <div class="row">
-        <form ng-submit="updateNinja()">
+        <form name="updateForm" ng-submit="updateNinja(updateForm)" novalidate>
             <div class="col-xs-4">
-                <input class="form-control" type="text" ng-model="ninja.name" placeholder="Name">
+                <input class="form-control" type="text"
+                ng-model="ninja.name"
+                placeholder="Name"
+                required>
             </div>
             <div class="col-xs-4">
-                <input class="form-control" type="text" ng-model="ninja.age" placeholder="Age">
+                <input class="form-control" type="text"
+                ng-model="ninja.age"
+                placeholder="Age"
+                required>
             </div>
             <div class="col-xs-4">
                 <button class="btn btn-success">Update</button>
