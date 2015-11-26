@@ -26,15 +26,29 @@
         </div>
     </div>
     <div class="row">
-        <form ng-submit="createNinja()" novalidate>
+        <form name="createForm" ng-submit="createNinja(createForm)" novalidate>
             <div class="col-xs-1">
                 <img src="images/ninja.png" class="img-responsive">
             </div>
             <div class="col-xs-4">
-                <input class="form-control" type="text" ng-model="newNinja.name" placeholder="Name">
+                <input class="form-control" type="text"
+                name="name"
+                ng-model="newNinja.name"
+                placeholder="Name"
+                required>
+                <p ng-show="createForm.name.$invalid && createForm.$submitted">
+                  Ninja name is required.
+                </p>
             </div>
             <div class="col-xs-2">
-                <input class="form-control" type="text" ng-model="newNinja.age" placeholder="Age">
+                <input class="form-control" type="number"
+                name="age"
+                ng-model="newNinja.age"
+                placeholder="Age"
+                required>
+                <p ng-show="createForm.age.$invalid && createForm.$submitted">
+                  Ninja age is required.
+                </p>
             </div>
             <div class="col-xs-4">
                 <button class="btn btn-success">Create</button>

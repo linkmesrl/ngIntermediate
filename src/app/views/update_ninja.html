@@ -3,15 +3,23 @@
         <form name="updateForm" ng-submit="updateNinja(updateForm)" novalidate>
             <div class="col-xs-4">
                 <input class="form-control" type="text"
+                name="name"
                 ng-model="ninja.name"
                 placeholder="Name"
                 required>
+                <p ng-show="updateForm.name.$invalid">
+                  Ninja name is required.
+                </p>
             </div>
             <div class="col-xs-4">
-                <input class="form-control" type="text"
+                <input class="form-control" type="number"
+                name="age"
                 ng-model="ninja.age"
                 placeholder="Age"
                 required>
+                <p ng-show="updateForm.age.$invalid">
+                  Ninja age is required.
+                </p>
             </div>
             <div class="col-xs-4">
                 <button class="btn btn-success">Update</button>
