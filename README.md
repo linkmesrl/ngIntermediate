@@ -9,8 +9,7 @@ Run the follow commands to install all the dependencies.
 npm i
 bower i
 ```
-Check branches for lessons
-Every branch has initial file for the lesson
+Check branches for lessons, every branch has initial setup for every lesson
 ## Lesson 01
 
 ```
