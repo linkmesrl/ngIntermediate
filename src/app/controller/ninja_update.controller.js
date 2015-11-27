@@ -2,7 +2,7 @@
 
 angular.module('handlingNinja')
 .controller('ninjaUpdateCtrl', function($scope, $location, $routeParams, Ninja) {
-  
+
   Ninja.get({_id: $routeParams.id}).$promise
   .then(function(ninja){
     $scope.ninja = ninja;

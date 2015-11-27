@@ -35,8 +35,16 @@
                 name="name"
                 ng-model="newNinja.name"
                 placeholder="Name"
+                ng-minlength="2"
+                ng-maxlength="12"
                 required>
-                <p ng-show="createForm.name.$invalid && createForm.$submitted">
+                <p ng-show="createForm.name.$error.minlength">
+                  Ninja name is too short.
+                </p>
+                <p ng-show="createForm.name.$error.maxlength">
+                  Ninja name is too long.
+                </p>
+                <p ng-show="createForm.name.$error.required && createForm.$submitted">
                   Ninja name is required.
                 </p>
             </div>
