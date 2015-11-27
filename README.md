@@ -11,3 +11,17 @@ bower i
 ```
 
 Check branches for lessons
+
+## Lesson 01
+
+```
+$http
+$resource
+```
+
+## Lesson 02
+
+```
+form validation
+custom directive
+```
