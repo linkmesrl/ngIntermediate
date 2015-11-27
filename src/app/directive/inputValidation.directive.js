@@ -10,7 +10,6 @@
     };
   }
   function linkFn(scope, el, attr, req) {
-    console.log(req);
     scope.form = req[0];
     scope.field = req[1];
 
@@ -42,7 +41,7 @@
     // });
 
   }
-  
+
 
   /**
    * @ngdoc directive
