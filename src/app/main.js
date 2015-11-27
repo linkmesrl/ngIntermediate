@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('handlingNinja', ['ngRoute', 'ngResource'])
+angular.module('handlingNinja', ['ngRoute', 'ngResource', 'lmValidation'])
 
 
 .config(['$routeProvider',

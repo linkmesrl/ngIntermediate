@@ -53,10 +53,11 @@
                 name="age"
                 ng-model="newNinja.age"
                 placeholder="Age"
-                required>
-                <p ng-show="createForm.age.$invalid && createForm.$submitted">
-                  Ninja age is required.
-                </p>
+                required
+                ng-maxlength="2"
+                form-validation
+                error-msg="Ninja age is required"
+                error-msg-max-length="Ninja age is 2 characters maximum">
             </div>
             <div class="col-xs-4">
                 <button class="btn btn-success">Create</button>

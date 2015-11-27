@@ -1,0 +1,3 @@
+.error, .error:focus {
+  border: 1px solid red;
+}
