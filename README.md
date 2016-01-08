@@ -23,3 +23,6 @@ $resource
 form validation
 custom directive
 ```
+
+## Lesson 03
+Modularization, path to angular 2
