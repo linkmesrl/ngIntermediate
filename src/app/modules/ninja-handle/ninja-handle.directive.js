@@ -2,11 +2,9 @@
 
   function dir() {
     return {
-      scope: {
-        ninjaId: '='
-      },
+      scope: {},
       controller: ctrl,
-      controllerAs: 'nu',
+      controllerAs: 'nh',
       templateUrl: 'app/modules/ninja-handle/ninja-handle.html',
       bindToController: true
     };
@@ -18,7 +16,6 @@
       .then(function(ninja){
         vm.newNinja = ninja;
       });
-
       vm.handleNinja = function(form) {
         if(!form.$valid) {
           return;
@@ -31,6 +28,7 @@
         });
       };
     } else {
+      vm.createNinjaTpl = true;
       vm.handleNinja = function(form) {
         if(!form.$valid) {
           return;
@@ -41,7 +39,7 @@
         .then(function() {
           vm.newNinja = {name: null, age: null};
           form.$setPristine();
-          $scope.$emit('createNinja');
+          $scope.$emit('ninjaListChanged');
         });
       };
     }

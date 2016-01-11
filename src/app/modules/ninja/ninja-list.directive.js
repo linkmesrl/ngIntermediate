@@ -9,20 +9,13 @@
       bindToController: true
     };
   }
-  function ctrl($scope, Ninja, _) {
+  function ctrl($scope, Ninja) {
     var vm = this;
     var loadNinja = function(){
       vm.ninjas = Ninja.query();
     };
     loadNinja();
-    vm.deleteNinja = function(ninja){
-      ninja.$remove()
-      .then(function(){
-        _.remove(vm.ninjas, {_id: ninja._id});
-        loadNinja();
-      });
-    };
-    $scope.$on('createNinja', loadNinja);
+    $scope.$on('ninjaListChanged', loadNinja);
   }
   angular.module('ninjaModule')
     .directive('ninjaList', dir);
