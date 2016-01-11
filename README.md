@@ -1,6 +1,8 @@
 # ngIntermediate
 Repository for the AngularJs Intermediate Workshop @ Login
 
+Here you can have a look at [slides](http://www.slideshare.net/LinkMeSrl/angular-intermediate)
+
 ## How to use it
 
 In this branch there is a simple boilerplate to start the project from scratch.
