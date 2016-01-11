@@ -27,4 +27,8 @@ custom directive
 ```
 
 ## Lesson 03
-Modularization, path to angular 2
+
+```
+Modularization,
+path to angular 2
+```
