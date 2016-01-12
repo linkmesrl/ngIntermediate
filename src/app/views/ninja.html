@@ -1,0 +1,67 @@
+<section>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-4">
+            <strong>Name</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>Age</strong>
+        </div>
+        <div class="col-xs-4">
+            <strong>Actions</strong>
+        </div>
+    </div>
+    <div class="row" ng-repeat="ninja in ninjas">
+        <div class="col-xs-1">
+            <img src="images/ninja.png" class="img-responsive">
+        </div>
+        <div class="col-xs-4">
+            {{ninja.name}}
+        </div>
+        <div class="col-xs-2">
+            {{ninja.age}}
+        </div>
+        <div class="col-xs-4">
+            <a class="btn btn-primary" ng-href="#/ninja/{{ninja._id}}">Details</a>
+            <div class="btn btn-danger" ng-click="deleteNinja(ninja)">Delete</div>
+        </div>
+    </div>
+    <div class="row">
+        <form name="createForm" ng-submit="createNinja(createForm)" novalidate>
+            <div class="col-xs-1">
+                <img src="images/ninja.png" class="img-responsive">
+            </div>
+            <div class="col-xs-4">
+                <input class="form-control" type="text"
+                name="name"
+                ng-model="newNinja.name"
+                placeholder="Name"
+                ng-minlength="2"
+                ng-maxlength="12"
+                required>
+                <p ng-show="createForm.name.$error.minlength">
+                  Ninja name is too short.
+                </p>
+                <p ng-show="createForm.name.$error.maxlength">
+                  Ninja name is too long.
+                </p>
+                <p ng-show="createForm.name.$error.required && createForm.$submitted">
+                  Ninja name is required.
+                </p>
+            </div>
+            <div class="col-xs-2">
+                <input class="form-control" type="number"
+                name="age"
+                ng-model="newNinja.age"
+                placeholder="Age"
+                required
+                ng-maxlength="2"
+                form-validation
+                error-msg="Ninja age is required"
+                error-msg-max-length="Ninja age is 2 characters maximum">
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-success">Create</button>
+            </div>
+        </form>
+    </div>
+</section>

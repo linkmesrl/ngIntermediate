@@ -1,0 +1,17 @@
+<section>
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-4">
+            <strong>Name</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>Age</strong>
+        </div>
+        <div class="col-xs-4">
+            <strong>Actions</strong>
+        </div>
+    </div>
+    <div class="row" ng-repeat="ninja in nl.ninjas">
+        <ninja-tile ninja="ninja"></ninja-tile>
+    </div>
+    <ninja-handle></ninja-handle>
+</section>

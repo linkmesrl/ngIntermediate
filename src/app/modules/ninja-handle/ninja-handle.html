@@ -1,0 +1,43 @@
+<div class="row">
+    <form name="createForm" ng-submit="nh.handleNinja(createForm)" novalidate>
+        <div class="col-xs-1">
+            <img src="images/ninja.png" class="img-responsive">
+        </div>
+        <div class="col-xs-4">
+            <input class="form-control" type="text"
+            name="name"
+            ng-model="nh.newNinja.name"
+            placeholder="Name"
+            ng-minlength="2"
+            ng-maxlength="12"
+            required>
+            <p ng-show="createForm.name.$error.minlength">
+              Ninja name is too short.
+            </p>
+            <p ng-show="createForm.name.$error.maxlength">
+              Ninja name is too long.
+            </p>
+            <p ng-show="createForm.name.$error.required && createForm.$submitted">
+              Ninja name is required.
+            </p>
+        </div>
+        <div class="col-xs-2">
+            <input class="form-control" type="number"
+            name="age"
+            ng-model="nh.newNinja.age"
+            placeholder="Age"
+            required
+            ng-maxlength="2"
+            form-validation
+            error-msg="Ninja age is required"
+            error-msg-max-length="Ninja age is 2 characters maximum">
+        </div>
+        <div class="col-xs-4" ng-if="nh.createNinjaTpl">
+            <button class="btn btn-success">Create</button>
+        </div>
+        <div class="col-xs-4" ng-if="!nh.createNinjaTpl">
+            <button class="btn btn-success">Update</button>
+            <a class="btn btn-default" ng-href="#/">Back</a>
+        </div>
+    </form>
+</div>

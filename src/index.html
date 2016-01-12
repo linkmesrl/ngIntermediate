@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="handlingNinja">
 <head>
     <meta charset="UTF-8">
-    <title>ngIntermiate</title>
+    <title>ngIntermediate</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Handling Ninjas</h1>
+      </div>
+    </div>
     <ng-view></ng-view>
-
+  </div>
+    <script src="bower_components/lodash/lodash.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="app/main.js"></script>
-
+    <script src="app/factory/lodash.factory.js"></script>
+    <script src="app/service/ninja.service.js"></script>
+    <script src="app/modules/ninja.module.js"></script>
+    <script src="app/modules/ninja/ninja-list.directive.js"></script>
+    <script src="app/modules/ninja-handle/ninja-handle.directive.js"></script>
+    <script src="app/modules/ninja-tile/ninja-tile.directive.js"></script>
+    <!-- <script src="app/controller/ninja.controller.js"></script>
+    <script src="app/controller/ninja_update.controller.js"></script> -->
+    <script src="app/directive/inputValidation.directive.js"></script>
 </body>
 </html>
