@@ -6,9 +6,9 @@ var path = require('path');
 
 // load bower components trough wiredep
 var bowerComponents = wiredep( {devDependencies: false} )[ 'js' ].map(function( file ) {
+  console.log(process.cwd(), file);
   return path.relative(process.cwd(), file);
 });
-console.log(bowerComponents);
 
 module.exports = function(config) {
   config.set({
@@ -24,11 +24,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: bowerComponents.concat([
-      'src/app/index.js',
+      'src/app/main.js',
       'src/app/**/*.module.js',
       'src/app/**/*.js',
       'unit/**/*.js',
-
       'src/**/*.html'
     ]),
 
@@ -41,13 +40,19 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/**/*.html': ['ng-html2js']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['mocha'],
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'src/',
+      moduleName: 'templates'
+    },
 
 
     // web server port
