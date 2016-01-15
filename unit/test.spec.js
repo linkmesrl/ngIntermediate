@@ -1,32 +1,57 @@
 'use strict';
 
-describe('The smallCart Directive', function () {
+describe('The ninja-list Directive', function () {
 
-  var element, scope;
+  var element, scope, isolatedScope, tile;
+  var serverMock = [
+    {
+      "age": 55,
+      "name": "Daniele",
+      "_id": "5693fa5af6976c704e00005a",
+      "__v": 0
+    },
+    {
+      "age": 10,
+      "name": "Mattia",
+      "_id": "5693faf8f6976c704e00005e",
+      "__v": 0
+    },
+    {
+      "age": 45,
+      "name": "Gianni",
+      "_id": "56976b6ef6976c704e000065",
+      "__v": 0
+    }
+  ];
+  var mockUserResource, $httpBackend;
 
+  
   // injecting main module
   beforeEach(module('handlingNinja'));
+  beforeEach(module('templates'));
 
-  // injecting and bootstrapping the directive
-  beforeEach(inject(function ($compile, $rootScope) {
+  beforeEach(inject(function($compile, $rootScope, $httpBackend) {
+
+    $httpBackend.whenGET('http://178.62.216.211:3001/api/ninja')
+    .respond(200, serverMock);
+
     scope = $rootScope.$new();
-    scope.ninja = {
-      _id: '5693fa5af6976c704e00005a',
-      age: 31,
-      name: 'Daniele',
-    }
-    element = $compile('<ninja-tile ninja="ninja"></ninja-tile>')(scope);
+
+    element = angular.element('<ninja-list></ninja-list>');
+
+    $compile(element)(scope);
+    scope.$apply();
+    $httpBackend.flush();
+    isolatedScope = element.isolateScope();
   }));
 
-  it('should work', function() {
-    expect(true).toBe(true);
+  it('should have 3 ninjas in scope', function () {
+    expect(isolatedScope.nl.ninjas.length).toBe(3);
   });
 
-
-  it('should show at least one ninja', function () {
-    // should trigger a $digest cicle to render the directive
-    scope.$digest();
-    expect(element.html()).toContain('Daniele');
-  });
+  it('should render 3 ninjas', function(){ 
+     var tiles = element[0].getElementsByTagName('ninja-tile');
+     expect(tiles.length).toEqual(3);
+   });
 
 });
