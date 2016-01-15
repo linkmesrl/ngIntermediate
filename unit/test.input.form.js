@@ -4,16 +4,13 @@ describe('Ninja form input test', function () {
 
   var element, scope, isolatedScope, tile;
 
-  
+
   // injecting main module
   beforeEach(module('handlingNinja'));
   beforeEach(module('templates'));
 
   beforeEach(inject(function($compile, $rootScope, $httpBackend) {
-
     scope = $rootScope.$new();
-
-
   }));
 
   it('should require form', inject(function ($compile) {
@@ -80,7 +77,7 @@ describe('Ninja form input test', function () {
     );
 
     expect(function(){
-        
+
        $compile(tile)(scope);
 
        scope.$digest();
