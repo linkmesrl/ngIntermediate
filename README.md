@@ -38,7 +38,7 @@ path to angular 2
 Test introduction
 unit test
 ```
-### dependencies
+### external libraries required for testing
 ```
 npm i --save-dev jasmine-core karma karma-babel-preprocessor karma-jasmine karma-mocha-reporter karma-ng-html2js-preprocessor karma-phantomjs-launcher phantomjs protractor wiredep
 ```
