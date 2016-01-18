@@ -32,3 +32,22 @@ custom directive
 Modularization,
 path to angular 2
 ```
+
+## Lesson 04
+```
+Test introduction
+unit test
+```
+### dependencies
+```
+jasmine-core
+karma
+karma-babel-preprocessor
+karma-jasmine
+karma-mocha-reporter
+karma-ng-html2js-preprocessor
+karma-phantomjs-launcher
+phantomjs
+protractor
+wiredep
+```
