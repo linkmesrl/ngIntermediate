@@ -30,7 +30,7 @@ describe('The ninja-tile Directive', function () {
     scope.$apply();
     expect(parseInt(element.find('.ninja-age').text().trim())).toEqual(25);
   });
-  it('It should contains Daniele', function () {
+  xit('It should contains Daniele', function () {
     expect(element.find('.ninja-name').text().trim()).toEqual('Daniele');
   });
   it('It should have age 55', function () {
