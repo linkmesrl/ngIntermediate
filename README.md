@@ -40,4 +40,5 @@ unit test
 ```
 ### dependencies
 ```
-npm i --save-dev jasmine-core karma karma-babel-preprocessor karma-jasmine karma-mocha-reporter karma-ng-html2js-preprocessor karma-phantomjs-launcher phantomjs protractor wiredep ```
+npm i --save-dev jasmine-core karma karma-babel-preprocessor karma-jasmine karma-mocha-reporter karma-ng-html2js-preprocessor karma-phantomjs-launcher phantomjs protractor wiredep
+```
